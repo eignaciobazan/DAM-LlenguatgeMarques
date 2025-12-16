@@ -22,11 +22,16 @@ chmod 600 $HOME/.ssh/id_rsa
 
 #Pas2 Entrar al portal de claus https://kamehouse.ieti.site
 #(el domini és .SITE!)
-#Carregar la clau PUBLICA (.pub)
+#Crear una nova clau pública amb la clau que s'obte de la comanda local:
 cat $HOME/.ssh/id_rsa.pub
 
-#Pas3 Connectar-te al servidor amb:
-ssh -p 20127 username@ieticloudpro.ieti.site
+#Pas3 Configurar arxiu proxmox/config.env
+DEFAULT_USER="usuariesteveterradas"
+DEFAULT_RSA_PATH="$HOME/.ssh/id_rsa"
+DEFAULT_SERVER_PORT="3000"
+
+#Connectar amb
+./proxmoxConnect.sh
 ```
 
 <center><img src="./assets/logo-nodejs.png" style="max-width: 90%; max-height: 200px;" alt="">
